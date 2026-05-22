@@ -191,7 +191,34 @@ using namespace std;
 	ceil(x); //向上取整
 ```
 
-### 1.8 C++新增语法
+### 1.8 stringstream
+
+- 字符串流
+- 自动以空格为分割，从串中泵出所需的内容
+
+```c++
+#include<sstream>
+#include<string>
+using namespace std;
+int main(){
+	string s = "1 2 3 4 10";
+    stringstream ss;
+    ss.clear(); // 清空并激活
+    ss.str(s); // 加载串s
+    int u;
+    while(ss >> u){
+        printf("%d ", u); // 输出1 2 3 4 10
+	}
+}
+
+// 同理，也可用<<向流中泵入内容
+int x = 10;
+ss << "code is:" << x;
+string res = ss.str(); // str不传入参数就是获取ss流中的内容
+cout << res; // 输出code is:10
+```
+
+### 1.9 C++新增语法
 
 ```c++
 //申请内存
